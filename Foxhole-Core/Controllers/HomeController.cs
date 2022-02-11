@@ -1,21 +1,16 @@
-﻿using Foxhole_Core.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Foxhole_Core.Controllers
 {
-	public class HomeController : Controller
+	[Route("/")]
+	[Route("[controller]")]
+	[ApiController]
+	public class HomeController : ControllerBase
 	{
-		public IActionResult Index()
+		[HttpGet]
+		public IEnumerable<string> Get()
 		{
-			return View();
-		}
-
-
-		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-		public IActionResult Error()
-		{
-			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+			return new string[] { "This is a placeholder btw", "value2" };
 		}
 	}
 }
