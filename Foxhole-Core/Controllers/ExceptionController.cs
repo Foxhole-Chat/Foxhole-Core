@@ -8,8 +8,8 @@ namespace Foxhole_Core.Controllers
 	[ApiController]
 	public class ExceptionController : ControllerBase
 	{
-		[HttpGet]
-		public IEnumerable<string> Get(int id)
+		[HttpGet("404")]
+		public IEnumerable<string> PageNotFound()
 		{
 			return new string[] { "value1", "value2" };
 		}

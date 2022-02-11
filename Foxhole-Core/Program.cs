@@ -28,8 +28,7 @@ app.Use(async (context, next) =>
 	{
 		case 404:
 			string url = context.Request.Path;
-			context.Request.Path = "/Exception/URL404";
-			context.Request.QueryString = new Microsoft.AspNetCore.Http.QueryString("?url=\"" + url + "\"");
+			context.Request.Path = "/Exception/404";
 			await next();
 			break;
 	}
